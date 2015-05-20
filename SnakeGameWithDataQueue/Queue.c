@@ -5,6 +5,11 @@
 Queue* Queue_Init ()
 {
 	Queue *initializedQ = (Queue*) malloc (sizeof(Queue));
+	if (initializedQ == NULL)
+	{
+		system("pause > Problem with allocating memory for Queue.\Please press any key to exit...");
+		exit(1);
+	}
 	initializedQ->front = NULL;
 	initializedQ->rear = NULL;
 	initializedQ->size = 0;
@@ -15,6 +20,12 @@ Queue* Queue_Init ()
 void Queue_Push (Queue *q, DataType element)
 {
 	Node* newElement = (Node*) malloc(sizeof(Node));
+	if (newElement == NULL)
+	{
+		system("pause > Problem with allocating memory for Node.\Please press any key to exit...");
+		exit(1);
+	}
+
 	newElement->data = element;
 	newElement->next = NULL;
 
